@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+   font-family: "Poppins", sans-serif;
+    /* font-family: "Montserrat", sans-serif; */
+}
+:root{
+  --primary-color: #8D976C;
+  --secondary-color:#FFF3E3;
+  --text-black:#333333;
+
+  --ff-montserrat: 'Montserrat', sans-serif;
+}
+.box-banner{
+  position: absolute;
+  top: 50%;
+  right: 4%;
+}
