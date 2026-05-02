@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Nav from "../../components/Nav/Nav.jsx";
 import BannerHome from "../../assets/bannerHome.png";
 import CategoriaArmarios from "../../assets/cat1.png";
@@ -8,6 +8,7 @@ import Img1 from "../../assets/img1.png";
 import Card from "../../components/Card/Card.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import ProdutosData from "../../database/produtos.js";
+import Carousel from "../../components/Carousel/Carousel.jsx";
 
 export default function Home() {
   const [produtos, setProdutos] = useState(ProdutosData);
@@ -16,13 +17,13 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <section className="h-screen bg-gray-100 relative">
+      <section className="h-full bg-white-100 relative">
         <div>
           <img
-            className="w-full h-screen lg:h-full object-cover"
+            className="w-full h-screen lg:h-full object-cover "
             src={BannerHome}
           />
-          <div className="absolute right-0 top-25 lg:right-10 lg:top-50  min-h-100 lg:min-h-85 max-w-190 p-5 m-2 lg:p-10 lg:m-0 bg-(--secondary-color) rounded-lg">
+          <div className="absolute right-0 top-25 lg:right-10 lg:top-40  min-h-100 lg:min-h-85 max-w-190 p-5 m-2 lg:p-10 lg:m-0 bg-(--secondary-color) rounded-lg">
             <div>
               <span className="font-bold text-md lg:text-2xl">
                 Novas Tendências
@@ -84,14 +85,14 @@ export default function Home() {
         <button className="border border-2 border-(--primary-color) text-(--primary-color) font-bold text-lg p-2 w-55 my-4">Ver mais</button>
       </section>
       <section className="mt-10">
-        <div className="w-full bg-(--secondary-color) h-100">
-          <div className="flex flex-col items-center content-center">
-            <h1 className="text-(--text-black) text-4xl">Estilos bonitos para se inspirar</h1>
-            <p>Nossos designer já fizeram muitos estilos de comodos que irão inspirar você</p>
-            <button>Explorar</button>
+        <div className="bg-(--secondary-color) h-auto grid md:grid-cols-2 py-10 px-5 md:px-0 md:ps-10">
+          <div className="md:w-md flex flex-col items-start justify-center md:ms-8">
+            <h1 className="text-(--text-black) text-4xl font-bold">Estilos bonitos para se inspirar</h1>
+            <p className="py-5">Nossos designer já fizeram muitos estilos de comodos que irão inspirar você</p>
+            <button className="bg-(--primary-color) text-white  p-6 mt-5 rounded-sm lg:w-100">Explorar</button>
           </div>
-          <div>
-
+          <div className="hidden md:block md:w-4xl">
+            <Carousel/>
           </div>
 
         </div>
